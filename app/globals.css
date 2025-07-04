@@ -67,3 +67,25 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Touch target minimum size */
+button, [role="button"], a, input, .touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Remove tap highlight on mobile for a native feel */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth overlay/menu transitions */
+.overlay, .menu, .sidebar {
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}

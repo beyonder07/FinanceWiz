@@ -87,11 +87,12 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden"
+                className="md:hidden active:scale-90 transition-transform duration-150"
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
+                <span className="sr-only">{isMobileMenuOpen ? "Close menu" : "Open menu"}</span>
+                <Menu className="h-5 w-5 transition-all duration-300" />
               </Button>
 
               {/* Logo - visible on mobile */}
@@ -149,7 +150,7 @@ export function Header() {
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className="h-9 w-9"
+            className="h-9 w-9 active:scale-90 transition-transform duration-150"
           >
             <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
