@@ -85,7 +85,7 @@ export function Header() {
 
   return (
     <header ref={headerRef} className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-lg transition-all">
-      <div className="container flex h-16 items-center justify-between px-4">
+      <div className="container flex h-16 items-center justify-between px-4 gap-4">
         {/* Left side - Logo and Navigation (only on non-dashboard pages) */}
         <div className="flex items-center space-x-4">
           {showNavigation && (
@@ -277,44 +277,8 @@ export function Header() {
                 <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">{currentPage.title}</h1>
                 <p className="text-sm sm:text-base text-muted-foreground mt-1">{currentPage.subtitle}</p>
               </div>
-
-              {/* Quick Actions */}
-              <div className="flex items-center space-x-2">
-                {pathname === "/transactions" && (
-                  <Button size="sm" className="flex items-center space-x-2">
-                    <Receipt className="h-4 w-4" />
-                    <span className="hidden sm:inline">Add Transaction</span>
-                    <span className="sm:hidden">Add</span>
-                  </Button>
-                )}
-                {pathname === "/budget" && (
-                  <Button size="sm" className="flex items-center space-x-2">
-                    <PiggyBank className="h-4 w-4" />
-                    <span className="hidden sm:inline">Add Budget</span>
-                    <span className="sm:hidden">Add</span>
-                  </Button>
-                )}
-              </div>
             </div>
           </div>
-        </div>
-      )}
-
-      {/* Add Transaction and Add Budget below navigation on dashboard pages (mobile and desktop) */}
-      {(isTransactionsPage || isBudgetPage) && (
-        <div className="flex flex-col md:flex-row gap-2 px-4 pb-2 md:pb-0 md:pt-2">
-          <AddTransactionDialog>
-            <Button className="w-full md:w-auto" variant="default">
-              <Plus className="mr-2 h-4 w-4" />
-              Add Transaction
-            </Button>
-          </AddTransactionDialog>
-          <AddBudgetDialog>
-            <Button className="w-full md:w-auto" variant="secondary">
-              <Plus className="mr-2 h-4 w-4" />
-              Add Budget
-            </Button>
-          </AddBudgetDialog>
         </div>
       )}
     </header>

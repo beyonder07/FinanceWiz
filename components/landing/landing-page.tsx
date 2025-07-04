@@ -71,7 +71,7 @@ export function LandingPage() {
             <TrendingUp className="h-8 w-8 text-primary" />
             <span className="text-xl font-bold">FinanceViz</span>
           </div>
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-6 mt-8">
             <Link href="#features" className="text-sm font-medium hover:text-primary transition-colors">
               Features
             </Link>
@@ -272,7 +272,7 @@ export function LandingPage() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-            © 2024 FinanceViz. Built with Next.js, React, and Tailwind CSS.
+            © 2025 FinanceViz. Built with Next.js, React, and Tailwind CSS.
           </div>
         </div>
       </footer>
