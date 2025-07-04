@@ -87,7 +87,7 @@ export function AddBudgetDialog({ children }: AddBudgetDialogProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="w-full max-w-xs sm:max-w-[425px] p-2 sm:p-6 overflow-y-auto max-h-[90vh]">
         <DialogHeader>
           <DialogTitle>Add Budget</DialogTitle>
           <DialogDescription>Set a spending limit for a specific category.</DialogDescription>
@@ -144,11 +144,11 @@ export function AddBudgetDialog({ children }: AddBudgetDialogProps) {
               </Select>
             </div>
           </div>
-          <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => setOpen(false)}>
+          <DialogFooter className="flex flex-col gap-2 sm:flex-row sm:gap-4">
+            <Button type="button" variant="outline" onClick={() => setOpen(false)} className="w-full active:scale-95 transition-transform duration-150">
               Cancel
             </Button>
-            <Button type="submit" disabled={loading}>
+            <Button type="submit" disabled={loading} className="w-full active:scale-95 transition-transform duration-150">
               {loading ? "Creating..." : "Create Budget"}
             </Button>
           </DialogFooter>

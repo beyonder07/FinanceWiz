@@ -104,7 +104,7 @@ export function EditTransactionDialog({ transaction, open, onOpenChange }: EditT
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="w-full max-w-xs sm:max-w-[425px] p-2 sm:p-6 overflow-y-auto max-h-[90vh]">
         <DialogHeader>
           <DialogTitle>Edit Transaction</DialogTitle>
           <DialogDescription>Make changes to your transaction details.</DialogDescription>
@@ -123,7 +123,7 @@ export function EditTransactionDialog({ transaction, open, onOpenChange }: EditT
               {errors.description && <p className="text-sm text-destructive">{errors.description}</p>}
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="grid gap-2">
                 <Label htmlFor="amount">Amount</Label>
                 <Input
@@ -187,11 +187,11 @@ export function EditTransactionDialog({ transaction, open, onOpenChange }: EditT
               {errors.date && <p className="text-sm text-destructive">{errors.date}</p>}
             </div>
           </div>
-          <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
+          <DialogFooter className="flex flex-col gap-2 sm:flex-row sm:gap-4">
+            <Button type="button" variant="outline" onClick={() => onOpenChange(false)} className="w-full active:scale-95 transition-transform duration-150">
               Cancel
             </Button>
-            <Button type="submit" disabled={loading}>
+            <Button type="submit" disabled={loading} className="w-full active:scale-95 transition-transform duration-150">
               {loading ? "Updating..." : "Update Transaction"}
             </Button>
           </DialogFooter>
