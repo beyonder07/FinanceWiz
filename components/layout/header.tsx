@@ -17,12 +17,14 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import { Moon, Sun, Menu, Receipt, PiggyBank, BarChart3, User, Settings, LogOut, Home } from "lucide-react"
+import { Moon, Sun, Menu, Receipt, PiggyBank, BarChart3, User, Settings, LogOut, Home, X, Plus } from "lucide-react"
 import { useTheme } from "next-themes"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import gsap from 'gsap'
+import { AddTransactionDialog } from "@/components/transactions/add-transaction-dialog"
+import { AddBudgetDialog } from "@/components/budget/add-budget-dialog"
 
 const navigationItems = [
   { name: "Dashboard", href: "/dashboard", icon: BarChart3 },
@@ -34,6 +36,7 @@ export function Header() {
   const { theme, setTheme } = useTheme()
   const pathname = usePathname()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const headerRef = useRef(null);
 
   useEffect(() => {
@@ -51,6 +54,10 @@ export function Header() {
 
   // Only show navigation on pages without sidebar
   const showNavigation = !hasSidebar
+
+  // Check if current page is transactions or budget
+  const isTransactionsPage = pathname.startsWith("/transactions")
+  const isBudgetPage = pathname.startsWith("/budget")
 
   const getCurrentPageInfo = () => {
     const currentPath = pathname
@@ -290,6 +297,24 @@ export function Header() {
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Add Transaction and Add Budget below navigation on dashboard pages (mobile and desktop) */}
+      {(isTransactionsPage || isBudgetPage) && (
+        <div className="flex flex-col md:flex-row gap-2 px-4 pb-2 md:pb-0 md:pt-2">
+          <AddTransactionDialog>
+            <Button className="w-full md:w-auto" variant="default">
+              <Plus className="mr-2 h-4 w-4" />
+              Add Transaction
+            </Button>
+          </AddTransactionDialog>
+          <AddBudgetDialog>
+            <Button className="w-full md:w-auto" variant="secondary">
+              <Plus className="mr-2 h-4 w-4" />
+              Add Budget
+            </Button>
+          </AddBudgetDialog>
         </div>
       )}
     </header>

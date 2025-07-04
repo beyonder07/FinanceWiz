@@ -56,18 +56,6 @@ export function Sidebar() {
 
   return (
     <>
-      {/* Mobile menu button */}
-      <Button
-        variant="ghost"
-        size="icon"
-        className="md:hidden fixed top-4 left-4 z-50 active:scale-90 transition-transform duration-150"
-        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-      >
-        <span className="sr-only">{isMobileMenuOpen ? "Close menu" : "Open menu"}</span>
-        {isMobileMenuOpen ? <X className="h-6 w-6 transition-all duration-300" /> : <Menu className="h-6 w-6 transition-all duration-300" />}
-      </Button>
-
       {/* Sidebar */}
       <div
         ref={sidebarRef}
