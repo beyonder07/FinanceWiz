@@ -59,3 +59,7 @@
 ### 10/17/2026 - Unit Testing with Vitest and Mocking Networks
 - Completed learning segment on: *Updated package files and verified dependency version parity.*
 - Sandbox action completed: `Refined README stats layout with progress bars.`
+
+### 10/21/2026 - Error Boundaries and Global Exception Handlers
+- Completed learning segment on: *Explored system performance and analyzed execution bottlenecks.*
+- Sandbox action completed: `Configured custom workflow properties inside the action configuration.`
