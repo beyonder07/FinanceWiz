@@ -63,3 +63,7 @@
 ### 10/21/2026 - Error Boundaries and Global Exception Handlers
 - Completed learning segment on: *Explored system performance and analyzed execution bottlenecks.*
 - Sandbox action completed: `Configured custom workflow properties inside the action configuration.`
+
+### 11/4/2026 - CI/CD Workflows with GitHub Actions
+- Completed learning segment on: *Documented design systems, core metrics, and operational guidelines.*
+- Sandbox action completed: `Configured custom workflow properties inside the action configuration.`
